@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-dark: #0a0a0f;
+  --bg-darker: #050508;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --neon-blue: #00f0ff;
+  --neon-purple: #8a2be2;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.15);
+  --danger: #ff003c;
+  --success: #00ff66;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(0, 240, 255, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(138, 43, 226, 0.05), transparent 25%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #fff;
+}
+
+a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-panel-hover {
+  transition: var(--transition);
+}
+
+.glass-panel-hover:hover {
+  border-color: var(--glass-highlight);
+  box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Form Elements */
+.glass-input {
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.glass-input:focus {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-purple);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Custom File Input */
+.glass-input.file-input {
+  padding: 8px 12px;
+}
+
+.glass-input.file-input::file-selector-button {
+  background: var(--glass-highlight);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 16px;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.glass-input.file-input::file-selector-button:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--neon-blue);
+  color: var(--text-primary);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
