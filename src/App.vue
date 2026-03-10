@@ -1,6 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import Sidebar from './components/Sidebar.vue'
+import PwaInstallPrompt from './components/PwaInstallPrompt.vue'
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import Sidebar from './components/Sidebar.vue'
     <main class="main-content">
       <RouterView />
     </main>
+    <PwaInstallPrompt />
   </div>
 </template>
 
